@@ -1,0 +1,30 @@
+
+ <%= button_to "Recevoir un Email", {controller: :email, action: :create}, remote: true %>
+ 
+<div class="container">
+      <div class="row align-item-center">
+        <div class="col">
+          <ul>
+            <th scope="col">Liste des emails</th>
+            <div id= "mail">
+          
+              <% @emails.each do  |email|%>
+                <ul>
+                  <th id= "mail-<%= email.id %>" scope="row"><%= link_to email.object, email_path(email.id), remote: true %></th>
+                  
+                  
+                </ul>
+              <%end%>
+            </div> 
+          </ul>
+
+        </div>
+        <div class="col">
+          
+            <th scope="col">email selectionné</th>
+            <div id= "content"> </div> 
+          
+        </div>
+      </div>
+</div>
+  

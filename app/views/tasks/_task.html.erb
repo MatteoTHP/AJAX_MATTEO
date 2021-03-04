@@ -1,0 +1,6 @@
+<li>
+    <%= task.title %>,
+    "Deadline : " <%=  task.deadline.strftime("%D")  %>
+    <%= link_to "Edit this task", edit_task_path(task) %>
+    <%= link_to "delete", task_path(task), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }%>
+</li>
