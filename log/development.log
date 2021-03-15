@@ -17550,3 +17550,52 @@ Processing by EmailController#destroy as JS
 Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2021-03-05 10:40:03 +0100
+  [1m[35m (40.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/matteo/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by EmailController#index as HTML
+  Rendering email/index.html.erb within layouts/application
+  [1m[36mEmail Load (43.2ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  ↳ app/views/email/index.html.erb:11
+  Rendered email/index.html.erb within layouts/application (150.9ms)
+  [1m[36mUser Load (51.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (92.1ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 6368ms (Views: 6183.3ms | ActiveRecord: 162.1ms)
+
+
+Started GET "/email/1" for 127.0.0.1 at 2021-03-05 10:40:14 +0100
+Processing by EmailController#show as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mEmail Load (0.4ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/email_controller.rb:24
+  Rendering email/show.js.erb
+  Rendered email/_show.html.erb (2.2ms)
+  Rendered email/show.js.erb (8.8ms)
+Completed 200 OK in 105ms (Views: 12.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/email/1" for 127.0.0.1 at 2021-03-05 10:40:16 +0100
+Processing by EmailController#destroy as JS
+  Parameters: {"authenticity_token"=>"EuVoxUvWblAJxn6TVGVJAbU/oG5zang9BwchDu/KG6+H5rTHN5fhGdUMs/bU9bIubnkFsIaQ0TciZLgd4SpbOA==", "id"=>"1"}
+  [1m[36mEmail Load (0.4ms)[0m  [1m[34mSELECT  "emails".* FROM "emails" WHERE "emails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/email_controller.rb:38
+  Rendering email/destroy.js.erb
+  Rendered email/destroy.js.erb (0.5ms)
+Completed 200 OK in 18ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-05 10:40:18 +0100
+Processing by EmailController#index as HTML
+  Rendering email/index.html.erb within layouts/application
+  [1m[36mEmail Load (0.9ms)[0m  [1m[34mSELECT "emails".* FROM "emails"[0m
+  ↳ app/views/email/index.html.erb:11
+  Rendered email/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (3.2ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 52ms (Views: 49.5ms | ActiveRecord: 1.3ms)
+
+
